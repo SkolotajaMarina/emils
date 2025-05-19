@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="lv">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,48 +13,96 @@
 
     .container {
       display: flex;
-      height: 100vh;
+      flex-wrap: wrap;
+      min-height: 100vh;
     }
 
     .side {
-      width: 20%;
+      flex: 1;
       background-color: #ececec;
+      min-width: 50px;
     }
 
     .main-content {
-      width: 60%;
+      flex: 2;
       background-color: #d0d1cc;
       padding: 40px;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
     }
 
     .header img {
-      width: 200px;
-      margin-left: 20px;
+      width: 150px;
+      max-width: 100%;
+      height: auto;
     }
 
     h1 {
-      margin: 0;
       font-size: 48px;
+      margin: 0;
     }
 
     .buttons {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      align-items: center;
-      margin-top: 50px;
+      width: 100%;
+      max-width: 300px;
     }
 
     button {
       font-size: 16px;
       padding: 12px 24px;
+      width: 100%;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #d0d1cc;
+      color: grey;
+      font-size: 14px;
+    }
+
+    /* Responsīvā uzbūve telefonam */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .side {
+        display: none;
+      }
+
+      .main-content {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
@@ -70,26 +118,17 @@
       </div>
 
       <div class="buttons">
-        <a href="par-logo.html">
-          <button>Par Logo</button>
-        </a>
-        <a href="par-terpu.html">
-          <button>Par Tērpu</button>
-        </a>
-        <a href="bildes.html">
-          <button>Bildes</button>
-        </a>
+        <a href="par-logo.html"><button>Par Logo</button></a>
+        <a href="par-terpu.html"><button>Par Tērpu</button></a>
+        <a href="bildes.html"><button>Bildes</button></a>
       </div>
     </div>
 
     <div class="side"></div>
   </div>
-</body>
-</html>
 
-</script>
-  <footer style="text-align: center; padding: 20px; background-color: #d0d1cc; color: grey; font-size: 14px; margin-top: 50px;">
-  Mājaslapas izstrādātājs: Emīls Kalniņš © 2025
-</footer>
+  <footer>
+    Mājaslapas izstrādātājs: Emīls Kalniņš © 2025
+  </footer>
 </body>
 </html>
